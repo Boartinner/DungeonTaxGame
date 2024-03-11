@@ -262,6 +262,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 292131621}
+  - component: {fileID: 292131622}
   m_Layer: 0
   m_Name: ApplicationController
   m_TagString: Untagged
@@ -284,6 +285,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292131622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292131620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57bfe67b7e600e14da1f0b8394d8791b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clientPrefab: {fileID: 5809188305486315886, guid: dda4f1d43cae17544896747314f039cc, type: 3}
+  hostPrefab: {fileID: 6123322489798911112, guid: 271b26da294186d408214337e2a74954, type: 3}
 --- !u!1 &526172893
 GameObject:
   m_ObjectHideFlags: 0
@@ -514,7 +529,7 @@ MonoBehaviour:
       NetworkPrefabsLists: []
     TickRate: 30
     ClientConnectionBufferTimeout: 10
-    ConnectionApproval: 0
+    ConnectionApproval: 1
     ConnectionData: 
     EnableTimeResync: 0
     TimeResyncInterval: 30

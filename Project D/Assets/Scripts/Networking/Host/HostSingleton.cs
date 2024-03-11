@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -34,5 +35,10 @@ public class HostSingleton : MonoBehaviour
     public void CreateHost()
     {
         GameManager = new HostGameManager();       
+    }
+
+    private void OnDestroy()
+    {
+        GameManager?.Dispose();
     }
 }
