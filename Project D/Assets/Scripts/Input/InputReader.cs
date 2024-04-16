@@ -9,9 +9,10 @@ using static Controls;
 public class InputReader : ScriptableObject, IPlayerActions
 {
     public event Action<Vector2> MoveEvent;
-    public event Action<bool> PrimaryFireEvent;
+    public event Action<bool> AttackEvent;
 
     public Vector2 AimPosition { get; private set; }
+    public bool AttackInput { get; private set; }
 
     private Controls controls;
 
@@ -30,15 +31,15 @@ public class InputReader : ScriptableObject, IPlayerActions
         MoveEvent?.Invoke(context.ReadValue<Vector2>());
     }
 
-    public void OnPrimaryFire(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            PrimaryFireEvent?.Invoke(true);
+            AttackEvent?.Invoke(true);
         }
         else if (context.canceled)
         {
-            PrimaryFireEvent?.Invoke(false);
+            AttackEvent?.Invoke(false);
         }
     }
 
