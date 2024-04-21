@@ -8,7 +8,7 @@ public class PlayerAttack : NetworkBehaviour
 {
     [SerializeField] private Animator anim;
     [SerializeField] private float meleeSpeed;
-    [SerializeField] private float damage;
+    [SerializeField] private int damage;
 
     private float timeUntilMelee;
 
@@ -63,10 +63,24 @@ public class PlayerAttack : NetworkBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (IsServer && col.CompareTag("Enemy"))
+        if (!IsServer)
+            return;
+
+        if (col.CompareTag("Enemy"))
         {
-            Debug.Log("Hit");
-            // Apply damage or any other logic here
+            // Get the Health component of the enemy
+            Health enemyHealth = col.GetComponent<Health>();
+        
+            // Check if the enemy has a Health component
+            if (enemyHealth != null)
+            {
+                // Apply damage to the enemy
+                enemyHealth.TakeDamage(damage);
+            }
+            else
+            {
+                Debug.LogWarning("Enemy does not have a Health component.");
+            }
         }
     }
 
