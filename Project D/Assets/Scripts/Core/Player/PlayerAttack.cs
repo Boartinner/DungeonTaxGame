@@ -79,7 +79,7 @@ public class PlayerAttack : NetworkBehaviour
             }
             else
             {
-                Debug.LogWarning("Enemy does not have a Health component.");
+                Debug.Log("Enemy does not have a Health component.");
             }
         }
     }
