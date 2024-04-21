@@ -16,10 +16,7 @@ public class WarriorPlayer : NetworkBehaviour
     [Header("Settings")]
     [SerializeField] private int ownerPriority = 15;
 
-    [SerializeField] private Color ownerColorOnMap;
-
     public NetworkVariable<FixedString32Bytes> PlayerName = new NetworkVariable<FixedString32Bytes>();
-    // public NetworkVariable<int> PlayerColorIndex = new NetworkVariable<int>();
 
     public static event Action<WarriorPlayer> OnPlayerSpawned;
     public static event Action<WarriorPlayer> OnPlayerDespawned;
@@ -31,7 +28,6 @@ public class WarriorPlayer : NetworkBehaviour
                 HostSingleton.Instance.GameManager.NetworkServer.GetUserDataByClientId(OwnerClientId);
 
             PlayerName.Value = userData.userName;
-            // PlayerColorIndex.Value = userData.userColorIndex;
 
             OnPlayerSpawned?.Invoke(this);
         }
