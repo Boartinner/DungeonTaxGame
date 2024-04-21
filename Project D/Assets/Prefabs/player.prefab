@@ -519,16 +519,15 @@ GameObject:
   - component: {fileID: 915709236399571447}
   - component: {fileID: 1685268685905843794}
   - component: {fileID: -8282756815252678465}
-  - component: {fileID: 6871124606224511164}
   - component: {fileID: 8388587624520240164}
   - component: {fileID: 5139863291184351049}
   - component: {fileID: 6514118967962963180}
-  - component: {fileID: -1405865365236671792}
   - component: {fileID: 9016220728925655374}
   - component: {fileID: 963486978274491963}
   - component: {fileID: 7380233713143199276}
+  - component: {fileID: 3691787747148503662}
   m_Layer: 0
-  m_Name: Player
+  m_Name: player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -677,21 +676,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.8158314, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6871124606224511164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316977652575702247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ede3a4269de0c94185e7927cf2d3a2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputReader: {fileID: 11400000, guid: 51a3317d8c0a7a04baf56ce2fa5bd727, type: 2}
-  rb: {fileID: 1685268685905843794}
-  moveSpeed: 5
 --- !u!114 &8388587624520240164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -754,22 +738,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &-1405865365236671792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4316977652575702247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 026fcb0139418c849958589c94264972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 7380233713143199276}
-  meleeSpeed: 1
-  damage: 10
-  inputReader: {fileID: 11400000, guid: 51a3317d8c0a7a04baf56ce2fa5bd727, type: 2}
 --- !u!114 &9016220728925655374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -858,6 +826,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3691787747148503662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316977652575702247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5cd717e68e89434fa86f3f36f1a8bc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputReader: {fileID: 11400000, guid: 51a3317d8c0a7a04baf56ce2fa5bd727, type: 2}
+  rb: {fileID: 1685268685905843794}
+  moveSpeed: 5
 --- !u!1 &6600946994185553890
 GameObject:
   m_ObjectHideFlags: 0

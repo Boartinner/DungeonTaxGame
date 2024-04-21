@@ -22,7 +22,7 @@ public class PlayerAttack : NetworkBehaviour
         }
     }
 
-    public override void OnDestroy()
+    private void OnDestroy()
     {
         if (IsLocalPlayer && inputReader != null)
         {
