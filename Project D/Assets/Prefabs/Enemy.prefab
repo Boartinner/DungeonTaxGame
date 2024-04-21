@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 4960755751589547966}
   - component: {fileID: 1509012860569283867}
   - component: {fileID: -8047469480607990373}
-  - component: {fileID: -1865769719096457970}
   - component: {fileID: 7504918358863991485}
   - component: {fileID: -6739916212970921965}
   m_Layer: 0
@@ -306,21 +305,6 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &-1865769719096457970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6518622636812323015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d402d627a01724dbbf534903ac0ffb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CurrentHealth:
-    m_InternalValue: 0
-  <MaxHealth>k__BackingField: 100
 --- !u!114 &7504918358863991485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentHealth:
     m_InternalValue: 0
-  <MaxHealth>k__BackingField: 100
+  <MaxHealth>k__BackingField: 20
 --- !u!114 &-6739916212970921965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae33bc7783ce09041bcd02a0f10bf5e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: -1865769719096457970}
+  health: {fileID: 0}
   healthBarImage: {fileID: 5365495193444450097}
 --- !u!1 &7613601715039288501
 GameObject:
