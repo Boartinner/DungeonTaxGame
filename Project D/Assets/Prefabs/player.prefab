@@ -526,6 +526,7 @@ GameObject:
   - component: {fileID: 963486978274491963}
   - component: {fileID: 7380233713143199276}
   - component: {fileID: 3691787747148503662}
+  - component: {fileID: 2721552179077786491}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -753,7 +754,7 @@ MonoBehaviour:
   virtualCamera: {fileID: 4751105823649654424}
   <Health>k__BackingField: {fileID: 963486978274491963}
   ownerPriority: 15
-  ownerColorOnMap: {r: 0.9245283, g: 0.5037136, b: 0.013082923, a: 0}
+  ownerColorOnMap: {r: 1, g: 0.5364807, b: 0, a: 0}
   PlayerName:
     m_InternalValue:
       utf8LengthInBytes: 0
@@ -841,6 +842,22 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: 51a3317d8c0a7a04baf56ce2fa5bd727, type: 2}
   rb: {fileID: 1685268685905843794}
   moveSpeed: 5
+--- !u!114 &2721552179077786491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4316977652575702247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd004c41253fa3f45923d42cfb27437a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 7380233713143199276}
+  meleeSpeed: 1
+  damage: 5
+  inputReader: {fileID: 11400000, guid: 51a3317d8c0a7a04baf56ce2fa5bd727, type: 2}
 --- !u!1 &6600946994185553890
 GameObject:
   m_ObjectHideFlags: 0
