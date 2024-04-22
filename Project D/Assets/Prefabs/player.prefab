@@ -754,7 +754,6 @@ MonoBehaviour:
   virtualCamera: {fileID: 4751105823649654424}
   <Health>k__BackingField: {fileID: 963486978274491963}
   ownerPriority: 15
-  ownerColorOnMap: {r: 1, g: 0.5364807, b: 0, a: 0}
   PlayerName:
     m_InternalValue:
       utf8LengthInBytes: 0
