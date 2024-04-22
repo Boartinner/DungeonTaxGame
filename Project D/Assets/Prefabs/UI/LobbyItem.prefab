@@ -523,7 +523,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1069750654344200256}
+      - m_Target: {fileID: 9130597184085731362}
         m_TargetAssemblyTypeName: LobbyItem, Assembly-CSharp
         m_MethodName: Join
         m_Mode: 1
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 6736474859419483685}
   - component: {fileID: 8196620953960023085}
   - component: {fileID: 4911626989591296271}
-  - component: {fileID: 1069750654344200256}
+  - component: {fileID: 9130597184085731362}
   m_Layer: 0
   m_Name: LobbyItem
   m_TagString: Untagged
@@ -614,7 +614,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &1069750654344200256
+--- !u!114 &9130597184085731362
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -623,7 +623,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8019927396258319589}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4582ecd07e994434ea07b4e7e563bfbb, type: 3}
+  m_Script: {fileID: 11500000, guid: fed0715ed52fddb4cabaa3db2c612f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   lobbyNameText: {fileID: 3170749435043903353}
