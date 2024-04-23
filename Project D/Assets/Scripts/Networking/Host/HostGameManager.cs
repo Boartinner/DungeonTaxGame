@@ -104,23 +104,42 @@ public class HostGameManager : IDisposable
         }
     }
 
-    public async void Dispose()
+    private async void HandleClientLeft(string authId)
+    {
+        try
+        {
+            await LobbyService.Instance.RemovePlayerAsync(lobbyId, authId);
+        }
+        catch (LobbyServiceException e)
+        {
+            Debug.Log(e);
+        }
+    }
+    
+    public void Dispose()
+    {
+        Shutdown();
+    }
+    
+    public async void Shutdown()
     {
         HostSingleton.Instance.StopCoroutine(nameof(HeartbeatLobby));
 
-        if (!string.IsNullOrEmpty(lobbyId))
+        if(!string.IsNullOrEmpty(lobbyId) )
         {
             try
             {
                 await Lobbies.Instance.DeleteLobbyAsync(lobbyId);
             }
-            catch (LobbyServiceException e)
-            {
+            catch(LobbyServiceException e)
+            { 
                 Debug.Log(e);
             }
 
-            lobbyId = string.Empty;
+            lobbyId = string.Empty; 
         }
+
+        NetworkServer.OnClientLeft -= HandleClientLeft;
         
         NetworkServer?.Dispose();
     }

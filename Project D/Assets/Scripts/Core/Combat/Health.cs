@@ -23,12 +23,7 @@ public class Health : NetworkBehaviour
     {
         ModifyHealth(-damageValue);
     }
-
-    public void RestoreHealth(int healValue)
-    {
-        ModifyHealth(healValue);
-    }
-
+    
     private void ModifyHealth(int value)
     {
         if (isDead) { return; }
