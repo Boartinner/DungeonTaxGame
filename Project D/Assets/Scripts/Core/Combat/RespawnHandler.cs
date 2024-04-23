@@ -7,7 +7,7 @@ using UnityEngine;
 public class RespawnHandler : NetworkBehaviour
 {
     [SerializeField] private WarriorPlayer playerPrefab;
-    
+
     public override void OnNetworkSpawn()
     {
         if (!IsServer) { return; }
