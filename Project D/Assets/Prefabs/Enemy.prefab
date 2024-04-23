@@ -165,7 +165,6 @@ GameObject:
   - component: {fileID: 7504918358863991485}
   - component: {fileID: -6739916212970921965}
   - component: {fileID: 1493264009700125203}
-  - component: {fileID: 1021969987362081940}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -353,21 +352,6 @@ MonoBehaviour:
   damageAmount: 5
   target: {fileID: 5746380684449271923, guid: aa673f726762248468ee61646ce3f54d, type: 3}
   playerHealth: {fileID: 963486978274491963, guid: aa673f726762248468ee61646ce3f54d, type: 3}
---- !u!114 &1021969987362081940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6518622636812323015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38c4639983b6724478c8d6fdead030f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 6518622636812323015}
-  maxEnemies: 10
-  respawnDelay: 10
 --- !u!1 &7613601715039288501
 GameObject:
   m_ObjectHideFlags: 0
