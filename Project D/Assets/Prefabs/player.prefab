@@ -802,7 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentHealth:
-    m_InternalValue: 100
+    m_InternalValue: 0
   <MaxHealth>k__BackingField: 100
 --- !u!95 &7380233713143199276
 Animator:
