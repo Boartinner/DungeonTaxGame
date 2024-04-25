@@ -55,11 +55,16 @@ public class EnemyRespawner : NetworkBehaviour
 
         // Spawn the new enemy using the NetworkManager instance associated with this object
         NetworkObject networkObject = newEnemy.GetComponent<NetworkObject>();
-        if (networkObject != null)
+        if (networkObject == null)
+        {
+            newEnemy.AddComponent<NetworkObject>();
+        }
+        else if (networkObject != null)
         {
             networkObject.Spawn();
+            spawnedEnemies.Add(networkObject.gameObject);
         }
-
+        
         // Attach the Health component and set up respawn logic
         Health enemyHealth = newEnemy.GetComponent<Health>();
         if (enemyHealth != null)
@@ -74,6 +79,7 @@ public class EnemyRespawner : NetworkBehaviour
         // Get the GameObject associated with the Health component
         GameObject enemy = enemyHealth.gameObject;
     
+        //Debug.Log("Respawn Enemy");
         // Call the RespawnEnemy method when the enemy dies
         RespawnEnemy(enemy);
     }
@@ -85,16 +91,18 @@ public class EnemyRespawner : NetworkBehaviour
 
     private IEnumerator RespawnCoroutine(GameObject enemy)
     {
-        // Wait for the respawn delay
-        yield return new WaitForSeconds(respawnDelay);
+       
 
         // Remove the enemy from the list of spawned enemies
         if (spawnedEnemies.Contains(enemy))
         {
             spawnedEnemies.Remove(enemy);
+            Destroy(enemy);
         }
-
-        // Spawn a new enemy
+        
+        // Wait for the respawn delay
+        yield return new WaitForSeconds(respawnDelay);
+        
         SpawnEnemy();
     }
 }

@@ -37,6 +37,7 @@ public class RespawnHandler : NetworkBehaviour
     private void HandlePlayerDie(WarriorPlayer player)
     {
         Destroy(player.gameObject);
+        StartCoroutine(RespawnPlayer(OwnerClientId));
     }
 
     private IEnumerator RespawnPlayer(ulong ownerClientId)

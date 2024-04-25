@@ -1,6 +1,11 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.Netcode;
+
 using UnityEngine;
 using UnityEngine.Networking;
+using Random = UnityEngine.Random;
 
 public class EnemyDetect : NetworkBehaviour
 {
@@ -9,7 +14,8 @@ public class EnemyDetect : NetworkBehaviour
     public int damageAmount = 5;
     public Transform target;
     public Health playerHealth;
-
+    private bool isFindingTarget;
+    private WaitForSeconds waitTimeToFindNewPlayer = new WaitForSeconds(1);
     void Update()
     {
         if (!IsServer) return; // Only run on the server
@@ -25,6 +31,57 @@ public class EnemyDetect : NetworkBehaviour
                 AttackPlayer();
             }
         }
+
+        if (target == null)
+        {
+            if (!isFindingTarget)
+            {
+                StartCoroutine(Start());
+            }
+        }
+        if (playerHealth != null)
+        {
+            if (playerHealth.CurrentHealth.Value == 0)
+            {
+                target = null;
+                playerHealth = null;
+               
+            }
+        }
+        
+    }
+
+    private IEnumerator Start()
+    {
+        isFindingTarget = true;
+        while (true)
+        {
+           // yield return new WaitForSeconds(1);
+            
+            GameObject[] player = GameObject.FindGameObjectsWithTag("Player");
+            if (player.Length == 0)
+            { 
+                yield return  waitTimeToFindNewPlayer;
+                 continue;
+            }
+            
+            GameObject selectedPlayer = player[Random.Range(0, player.Length)];
+            if (selectedPlayer != null)
+            {
+                if (selectedPlayer.TryGetComponent<Health>(out Health playerHealth))
+                {
+                    this.playerHealth = playerHealth;
+                }
+
+                SetTarget(selectedPlayer.transform);
+                isFindingTarget = false;
+                break;
+                
+            }
+        
+           
+        }
+        
     }
     
     void AttackPlayer()
